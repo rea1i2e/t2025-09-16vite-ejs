@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import sassGlobImports from 'vite-plugin-sass-glob-import'
 
 export default defineConfig({
   server: {
@@ -6,5 +7,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist/recruit'  // ビルド出力ディレクトリを変更
-  }
+  },
+  plugins: [sassGlobImports()], // Sassファイルをglobパターン（ワイルドカード）でまとめてインポートできるようにする
 })
