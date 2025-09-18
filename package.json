@@ -11,6 +11,7 @@
   "devDependencies": {
     "sass": "^1.92.1",
     "vite": "^6.3.6",
+    "vite-plugin-ejs": "^1.7.0",
     "vite-plugin-sass-glob-import": "^5.0.0"
   }
 }
