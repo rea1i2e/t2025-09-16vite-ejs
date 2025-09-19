@@ -5,7 +5,11 @@
 <body>
     <%- include('./components/header') %>
     
-    <%- include('./components/main-content') %>
+    <% if (typeof contentComponent !== 'undefined' && contentComponent) { %>
+        <%- include('./components/' + contentComponent) %>
+    <% } else { %>
+        <%- include('./components/main-content') %>
+    <% } %>
     
     <%- include('./components/footer') %>
     

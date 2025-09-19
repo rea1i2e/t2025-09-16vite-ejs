@@ -3,7 +3,6 @@ export const prodConfig = {
   title: 'ホーム - サイトタイトル',
   description: 'サイトのメインページです',
   debug: false,
-  apiUrl: 'https://api.example.com',
   
   // 本番環境特有の設定
   hotReload: false,

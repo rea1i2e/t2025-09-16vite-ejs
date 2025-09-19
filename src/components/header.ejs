@@ -1,12 +1,45 @@
+<%#
+/**
+ * header.ejs - ヘッダーコンポーネント
+ * 
+ * 【ファイルの役割】
+ * サイト全体で共通して使用されるヘッダー部分を管理します。
+ * ナビゲーションメニューとサイトタイトルを含み、全ページで同じヘッダーを表示します。
+ * 
+ * 【構成要素】
+ * - サイトタイトル: ロゴやサイト名を表示
+ * - ナビゲーションメニュー: 各ページへのリンク
+ *   - ホーム: トップページへのリンク
+ *   - 会社概要: 会社概要ページへのリンク
+ * 
+ * 【CSSクラス命名規則】
+ * - p-header: プロジェクト（Project）のヘッダー
+ * - l-header: レイアウト（Layout）のヘッダー
+ * - BEM記法を使用: ブロック__エレメント--モディファイア
+ * 
+ * 【使用方法】
+ * 1. layout.ejs から <%- include('./components/header') %> で読み込み
+* 2. 全ページで自動的に表示される
+* 3. ナビゲーションリンクは手動で管理（ページ追加時は要更新）
+*
+* 【注意事項】
+* - サイトタイトルは固定値（設定ファイルから動的取得は未実装）
+* - ナビゲーションリンクは手動で管理
+* - レスポンシブ対応はCSSで実装
+*/
+%>
 <header class="p-header l-header">
-    <div class="p-header__inner">
-        <h1 class="p-header__title">サイトタイトル</h1>
-        <nav class="p-header__nav">
-            <ul class="p-header__nav-list">
-                <li class="p-header__nav-item">
-                    <a href="/" class="p-header__nav-link">ホーム</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+  <div class="p-header__inner">
+    <h1 class="p-header__title">サイトタイトル</h1>
+    <nav class="p-header__nav">
+      <ul class="p-header__nav-list">
+        <li class="p-header__nav-item">
+          <a href="/" class="p-header__nav-link">ホーム</a>
+        </li>
+        <li class="p-header__nav-item">
+          <a href="/about" class="p-header__nav-link">会社概要</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
