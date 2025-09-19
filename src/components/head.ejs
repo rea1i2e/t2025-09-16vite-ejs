@@ -25,4 +25,20 @@
   <!-- 開発環境用のデバッグ情報 -->
   <script>console.log('開発環境で実行中');</script>
   <% } %>
+  
+  <% if (consoleLog) { %>
+  <!-- コンソールログ制御 -->
+  <script>
+    // main.js の console.log を制御
+    const originalConsoleLog = console.log;
+    console.log = function(...args) {
+      originalConsoleLog.apply(console, args);
+    };
+  </script>
+  <% } else { %>
+  <!-- 本番環境では console.log を無効化 -->
+  <script>
+    console.log = function() {};
+  </script>
+  <% } %>
 </head>
