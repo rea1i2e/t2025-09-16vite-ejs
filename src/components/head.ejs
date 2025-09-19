@@ -1,0 +1,28 @@
+<head>
+  <meta charset="<%= meta.charset %>">
+  <meta name="viewport" content="<%= meta.viewport %>">
+  <title><%= title || siteName %></title>
+  <meta name="description" content="<%= description %>">
+  <meta name="keywords" content="<%= keywords %>">
+  <meta name="author" content="<%= author %>">
+  <meta name="robots" content="<%= meta.robots %>">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="<%= title || siteName %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:image" content="<%= ogImage %>">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="<%= twitterCard %>">
+  <meta name="twitter:title" content="<%= title || siteName %>">
+  <meta name="twitter:description" content="<%= description %>">
+  <meta name="twitter:image" content="<%= ogImage %>">
+  
+  <link rel="stylesheet" href="./sass/style.scss">
+  
+  <% if (debug) { %>
+  <!-- 開発環境用のデバッグ情報 -->
+  <script>console.log('開発環境で実行中');</script>
+  <% } %>
+</head>

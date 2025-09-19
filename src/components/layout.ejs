@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title || 'EJS + Vite + Sass テンプレート' %></title>
-    <meta name="description" content="<%= description || 'サイトのメインページです' %>">
-    <link rel="stylesheet" href="./scss/style.scss">
-</head>
+
+<%- include('./components/head') %>
 <body>
     <%- include('./components/header') %>
     

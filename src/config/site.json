@@ -1,0 +1,9 @@
+{
+  "title": "ページタイトル",
+  "description": "ページディスクリプション",
+  "siteName": "サイト名",
+  "author": "作者名",
+  "keywords": "キーワード1,キーワード2,キーワード3",
+  "ogImage": "/images/og-image.jpg",
+  "twitterCard": "summary_large_image"
+}
