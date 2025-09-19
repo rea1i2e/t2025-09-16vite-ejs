@@ -30,6 +30,10 @@ export const siteConfig = {
   author: '作者名',                              // 作者名（meta author）
   keywords: 'キーワード1,キーワード2,キーワード3',  // SEO用キーワード
   
+  // ページ基本設定（全環境共通）
+  baseTitle: 'ホーム - サイトタイトル',         // 基本タイトル
+  description: 'サイトのメインページです',        // 基本説明文
+  
   // SNS連携設定
   ogImage: '/images/og-image.jpg',              // Open Graph用画像パス
   twitterCard: 'summary_large_image',           // Twitter Cardの種類

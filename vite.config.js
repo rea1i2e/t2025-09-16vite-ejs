@@ -2,25 +2,24 @@ import { defineConfig } from 'vite'
 import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { ViteEjsPlugin } from 'vite-plugin-ejs'
 import siteConfig from './src/config/site.js'
-import devConfig from './src/config/development.js'
-import stagingConfig from './src/config/staging.js'
-import prodConfig from './src/config/production.js'
+import { environments } from './src/config/environments.js'
 import pageConfig from './src/config/pages.js'
 
 export default defineConfig(({ mode }) => {
-  // 環境に応じて設定を選択
-  let envConfig
-  switch(mode) {
-    case 'production':
-      envConfig = prodConfig
-      break
-    case 'staging':
-      envConfig = stagingConfig
-      break
-    default:
-      envConfig = devConfig
+  // 環境に応じて設定を選択（デフォルトはdevelopment）
+  const envConfig = environments[mode] || environments.development
+  
+  // タイトルを自動生成
+  const title = envConfig.environmentPrefix 
+    ? `${envConfig.environmentPrefix}${siteConfig.baseTitle}`
+    : siteConfig.baseTitle
+  
+  const config = { 
+    ...siteConfig, 
+    ...envConfig, 
+    pageConfig,
+    title  // 自動生成されたタイトルを追加
   }
-  const config = { ...siteConfig, ...envConfig, pageConfig }
   
   return {
     server: {
